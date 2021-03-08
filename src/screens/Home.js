@@ -25,6 +25,12 @@ const Home = () => {
           nav.push('UiExamples');
         }}
       />
+      <Button
+        title="Go LocalNote"
+        onPress={() => {
+          nav.push('LocalNote');
+        }}
+      />
     </SafeAreaView>
   );
 };

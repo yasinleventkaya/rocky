@@ -1,6 +1,6 @@
-import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Text, View, TouchableOpacity, Image} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import StyleSheets from '../style/Styles';
 
 const PersonCard = (props) => {
