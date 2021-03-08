@@ -102,8 +102,6 @@ const StyleSheets = StyleSheet.create({
   personCard: {
     backgroundColor: Colors.white,
     borderRadius: 10,
-    // borderWidth: 5,
-    // borderColor: Colors.blue,
     overflow: 'hidden',
     padding: 10,
     flexDirection: 'row',
