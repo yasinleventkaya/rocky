@@ -1,34 +1,47 @@
 import {useNavigation} from '@react-navigation/core';
-import React from 'react';
+import Translation from '../utils/Translate';
+import React, {useState} from 'react';
 import {Button, SafeAreaView} from 'react-native';
 import StyleSheets from '../style/Styles';
 
 const Home = () => {
   const nav = useNavigation();
+  const [refresh, setRefresh] = useState(false);
   return (
-    <SafeAreaView style={[StyleSheets.container, {justifyContent: 'center'}]}>
+    <SafeAreaView style={StyleSheets.container}>
       <Button
-        title="Go Person List"
+        title={Translation.t('personList')}
         onPress={() => {
           nav.push('PersonList');
         }}
       />
       <Button
-        title="Go Pictures"
+        title={Translation.t('pictures')}
         onPress={() => {
           nav.push('Picture');
         }}
       />
       <Button
-        title="Go Ui Examples"
+        title={Translation.t('uiExamples')}
         onPress={() => {
           nav.push('UiExamples');
         }}
       />
       <Button
-        title="Go LocalNote"
+        title={Translation.t('localNote')}
         onPress={() => {
           nav.push('LocalNote');
+        }}
+      />
+      <Button
+        title={Translation.t('settings')}
+        onPress={() => {
+          nav.push('Settings', {
+            callb: () => {
+              setRefresh(!refresh);
+              nav.pop();
+            },
+          });
         }}
       />
     </SafeAreaView>

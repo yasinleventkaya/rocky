@@ -9,6 +9,7 @@ import PersonDetail from './screens/PersonDetail';
 import Picture from './screens/Picture';
 import UiExamples from './screens/UiExamples';
 import LocalNote from './screens/LocalNote';
+import Settings from './screens/Settings';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ function App() {
         <Stack.Screen name="UiExamples" component={UiExamples} />
         <Stack.Screen name="Picture" component={Picture} />
         <Stack.Screen name="LocalNote" component={LocalNote} />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );
