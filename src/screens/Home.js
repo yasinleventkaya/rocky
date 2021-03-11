@@ -1,14 +1,23 @@
 import {useNavigation} from '@react-navigation/core';
 import Translation from '../utils/Translate';
-import React, {useState} from 'react';
-import {Button, SafeAreaView} from 'react-native';
+import React, {useContext, useState} from 'react';
+import {Button, SafeAreaView, Text, View} from 'react-native';
 import StyleSheets from '../style/Styles';
+import {OrderContext} from '../contexts/OrderContext';
+import Translate from '../utils/Translate';
 
 const Home = () => {
   const nav = useNavigation();
   const [refresh, setRefresh] = useState(false);
+  const order = useContext(OrderContext);
   return (
     <SafeAreaView style={StyleSheets.container}>
+      <Button
+        title={Translation.t('orderList')}
+        onPress={() => {
+          nav.push('OrderList');
+        }}
+      />
       <Button
         title={Translation.t('personList')}
         onPress={() => {
@@ -44,6 +53,15 @@ const Home = () => {
           });
         }}
       />
+      <View style={StyleSheets.container} />
+      <Text
+        style={
+          order.orderIsHurry
+            ? StyleSheets.orderStripTextHurry
+            : StyleSheets.orderStripTextNotHurry
+        }>
+        {Translate.t('orderItemsCount') + order.orderItems.length}
+      </Text>
     </SafeAreaView>
   );
 };

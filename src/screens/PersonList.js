@@ -13,9 +13,7 @@ const PersonList = (props) => {
   useEffect(() => {
     const getResult = async () => {
       setPersons(await getAllUsers());
-      window.setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
+      setIsLoading(false);
     };
     getResult();
   }, []);

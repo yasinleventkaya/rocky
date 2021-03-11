@@ -10,23 +10,31 @@ import Picture from './screens/Picture';
 import UiExamples from './screens/UiExamples';
 import LocalNote from './screens/LocalNote';
 import Settings from './screens/Settings';
+import {MoodContextProvider} from './contexts/MoodContextProvider';
+import {OrderContextProvider} from './contexts/OrderContext';
+import OrderList from './screens/OrderList';
 
 const Stack = createStackNavigator();
 
-function App() {
+const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="PersonList" component={PersonList} />
-        <Stack.Screen name="PersonDetail" component={PersonDetail} />
-        <Stack.Screen name="UiExamples" component={UiExamples} />
-        <Stack.Screen name="Picture" component={Picture} />
-        <Stack.Screen name="LocalNote" component={LocalNote} />
-        <Stack.Screen name="Settings" component={Settings} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <MoodContextProvider>
+      <OrderContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="PersonList" component={PersonList} />
+            <Stack.Screen name="PersonDetail" component={PersonDetail} />
+            <Stack.Screen name="OrderList" component={OrderList} />
+            <Stack.Screen name="UiExamples" component={UiExamples} />
+            <Stack.Screen name="Picture" component={Picture} />
+            <Stack.Screen name="LocalNote" component={LocalNote} />
+            <Stack.Screen name="Settings" component={Settings} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </OrderContextProvider>
+    </MoodContextProvider>
   );
-}
+};
 
 export default App;

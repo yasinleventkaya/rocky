@@ -31,6 +31,11 @@ const baseStyles = {
     overflow: 'hidden',
     borderWidth: 2,
   },
+  stripText: {
+    fontSize: fonts.xxl,
+    textAlign: 'center',
+    color: Colors.ivory,
+  },
 };
 
 const StyleSheets = StyleSheet.create({
@@ -40,6 +45,15 @@ const StyleSheets = StyleSheet.create({
   centeredContainer: {
     ...baseStyles.containerBase,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  paddedContainer: {
+    ...baseStyles.containerBase,
+    padding: 10,
+  },
+  switchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   title: {
@@ -125,6 +139,20 @@ const StyleSheets = StyleSheet.create({
   personCardText: {
     color: Colors.softBlue,
     fontSize: fonts.l,
+  },
+  textInputStandart: {
+    padding: 8,
+    backgroundColor: 'white',
+    borderColor: 'gray',
+    borderWidth: 1,
+  },
+  orderStripTextNotHurry: {
+    ...baseStyles.stripText,
+    backgroundColor: Colors.green,
+  },
+  orderStripTextHurry: {
+    ...baseStyles.stripText,
+    backgroundColor: Colors.red,
   },
 });
 
