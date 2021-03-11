@@ -1,6 +1,23 @@
 import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
+const dimens = {
+  xxs: 1,
+  xs: 2,
+  s: 5,
+  m: 8,
+  l: 12,
+  xl: 20,
+  xxl: 25,
+  xxxl: 50,
+  huge: 100,
+  avatarImg: 50,
+  avatarImgRadius: 25,
+  smallImg: 100,
+  mediumImg: 200,
+  largeImg: 300,
+};
+
 const fonts = {
   xxs: 8,
   xs: 10,
@@ -20,16 +37,16 @@ const baseStyles = {
   },
   textBase: {
     color: Colors.darkGray,
-    padding: 8,
+    padding: dimens.m,
   },
   button: {
     textAlign: 'center',
-    padding: 8,
+    padding: dimens.m,
     color: Colors.darkGray,
-    borderRadius: 10,
-    margin: 10,
+    borderRadius: dimens.l,
+    margin: dimens.l,
     overflow: 'hidden',
-    borderWidth: 2,
+    borderWidth: dimens.xs,
   },
   stripText: {
     fontSize: fonts.xxl,
@@ -49,7 +66,7 @@ const StyleSheets = StyleSheet.create({
   },
   paddedContainer: {
     ...baseStyles.containerBase,
-    padding: 10,
+    padding: dimens.l,
   },
   switchContainer: {
     flexDirection: 'row',
@@ -62,7 +79,7 @@ const StyleSheets = StyleSheet.create({
     textAlign: 'center',
     fontSize: fonts.xxxl,
     fontWeight: 'bold',
-    padding: 8,
+    padding: dimens.m,
   },
   text1: {
     ...baseStyles.textBase,
@@ -76,60 +93,60 @@ const StyleSheets = StyleSheet.create({
   primaryButton: {
     backgroundColor: Colors.blue,
     borderColor: Colors.darkBlue,
-    fontSize: 18,
+    fontSize: fonts.xl,
     ...baseStyles.button,
   },
   secondaryButton: {
     backgroundColor: Colors.yellow,
     borderColor: Colors.darkYellow,
-    fontSize: 14,
+    fontSize: fonts.l,
     ...baseStyles.button,
   },
   smallImg: {
-    width: 100,
-    height: 100,
+    width: dimens.smallImg,
+    height: dimens.smallImg,
     resizeMode: 'center',
   },
   mediumImg: {
-    width: 200,
-    height: 200,
+    width: dimens.mediumImg,
+    height: dimens.mediumImg,
     resizeMode: 'center',
   },
   largeImg: {
-    width: 300,
-    height: 300,
+    width: dimens.largeImg,
+    height: dimens.largeImg,
     resizeMode: 'center',
     alignSelf: 'center',
-    margin: 10,
+    margin: dimens.l,
   },
   listDividerLine: {
-    height: 5,
+    height: dimens.s,
     backgroundColor: Colors.softBlue,
   },
   listDividerSpace: {
-    height: 10,
+    height: dimens.m,
     backgroundColor: Colors.transparent,
   },
   personList: {
-    margin: 10,
+    margin: dimens.l,
   },
   personCard: {
     backgroundColor: Colors.white,
-    borderRadius: 10,
+    borderRadius: dimens.l,
     overflow: 'hidden',
-    padding: 10,
+    padding: dimens.l,
     flexDirection: 'row',
     alignItems: 'center',
   },
   personCardPic: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: dimens.avatarImg,
+    height: dimens.avatarImg,
+    borderRadius: dimens.avatarImgRadius,
     overflow: 'hidden',
     resizeMode: 'contain',
   },
   personCardTextContainer: {
-    marginLeft: 20,
+    marginLeft: dimens.xl,
     justifyContent: 'center',
   },
   personCardTitle: {
@@ -141,10 +158,10 @@ const StyleSheets = StyleSheet.create({
     fontSize: fonts.l,
   },
   textInputStandart: {
-    padding: 8,
-    backgroundColor: 'white',
-    borderColor: 'gray',
-    borderWidth: 1,
+    padding: dimens.m,
+    backgroundColor: Colors.white,
+    borderColor: Colors.darkGray,
+    borderWidth: dimens.xxs,
   },
   orderStripTextNotHurry: {
     ...baseStyles.stripText,
